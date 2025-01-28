@@ -1,5 +1,3 @@
-include config.mk
-
 OBJS += kernel/obj/k_spinlock.o
 D += kernel/obj/k_spinlock.d
 OBJS += kernel/obj/k_vm.o
