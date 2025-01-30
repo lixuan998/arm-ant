@@ -8,7 +8,7 @@
 pagetable_t pagetable_create(VM_MAP_INFO map_info[], int num_of_mapping);
 void pagetable_destroy(pagetable_t pagetable);
 void pagetable_entry_add(pagetable_t pagetable, VM_MAP_INFO map_info[], int num_of_mapping);
-int vm_mapping(pagetable_t pagetable, addr_t virt_addr_start, addr_t phys_addr_start, pagesize_t size, isa_reg_t permisson);
+
 pte_t* pte_retrieve(pagetable_t pagetable, addr_t virt_addr);
 void set_vm_pagetable(pagetable_t pagetable);
 

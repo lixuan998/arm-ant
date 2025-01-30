@@ -1,11 +1,5 @@
 #include "plic.h"
 
-void plic_s_mode_access()
-{
-    //Give access to supervisor mode to access PLIC registers.
-    write32(PLIC_CTRL_REG, PLIC_CTRL_REG_S_MODE_ACCESS);
-}
-
 void plic_interrupt_enable()
 {
     for(int i = 1; i < PLIC_INTERRUPT_MAX; ++ i)

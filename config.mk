@@ -1,5 +1,5 @@
-TOOLCHAIN_DIR := /opt/homebrew/bin
-TOOLCHAIN=riscv64-unknown-elf
+TOOLCHAIN_DIR := /home/climatex/tools/xuantie_toolchain/bin
+TOOLCHAIN=riscv64-unknown-linux-gnu
 LINKLD := linkld.ld
 
 CC := ${TOOLCHAIN_DIR}/$(TOOLCHAIN)-gcc
@@ -16,4 +16,4 @@ CFLAGS += $(shell $(CC) -fno-stack-protector -E -x c /dev/null >/dev/null 2>&1 &
 CFLAGS += -march=rv64g -nostdinc
 
 AA_ARCH = riscv64
-AA_PLAT = nezha-d1-h
+AA_BOARD = nezha-d1-h

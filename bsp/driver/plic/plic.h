@@ -1,9 +1,10 @@
 #ifndef __PLIC_H__
 #define __PLIC_H__
 
-#include "arch/riscv/include/riscv_type_defs.h"
-#include "arch/riscv/include/riscv_basic_operation.h"
-#include "lib/include/stdio.h"
+// #include "arch/riscv/include/riscv_type_defs.h"
+#include <lib/printk.h>
+#include <common/operation.h>
+#include <common/stdint.h>
 
 #define PLIC_ENABLE                 (1)
 #define PLIC_DISABLE                (0)
@@ -114,7 +115,10 @@ enum PLIC_EXTERNAL_INTERRUPT_SOURCE{
 };
 
 
-void plic_s_mode_access();
+static inline void plic_s_mode_access()
+{
+    write32(PLIC_CTRL_REG, PLIC_CTRL_REG_S_MODE_ACCESS);
+}
 void plic_interrupt_enable();
 void plic_interrupt_disable();
 int plic_interrupt_source();
